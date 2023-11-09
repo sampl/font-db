@@ -72,7 +72,9 @@ function DetailPage({ fontFamily }: { fontFamily: string }) {
         </ul>
 
         <p>
-          <a href="">Report a problem</a>
+          <a href="https://github.com/sampl/font-db/issues" target="_blank">
+            Report a problem
+          </a>
           {/*
         Just an idea...
         Love this font? <a href="">Order a poster print</a>

@@ -40,11 +40,13 @@ function Refinements() {
       <footer>
         <a href="mailto:sam@directedworks.com">Feedback</a>
         {" · "}
-        <a href="">Open source</a>
+        <a href="https://github.com/sampl/font-db" target="_blank">
+          Open source
+        </a>
+        {/* {" · "}
+        <a href="https://github.com/sampl/font-db">Contribute</a>
         {" · "}
-        <a href="">Contribute</a>
-        {" · "}
-        <a href="">Legal</a>
+        <a href="https://github.com/sampl/font-db">Legal</a> */}
       </footer>
     </div>
   );
