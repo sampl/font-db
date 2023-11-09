@@ -34,6 +34,7 @@ const FontList = ({
       )}
 
       <ol className="font-family-list">
+        {/* @ts-ignore */}
         {hits.map((hit: Hit) => {
           const text =
             previewText === "Name"
