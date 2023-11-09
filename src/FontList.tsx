@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useInfiniteHits } from "react-instantsearch";
 
 import { previewTexts } from "./defaults/previewTexts";
-import type { Hit } from "../../types/types";
+import type { Hit } from "../types/types";
 import Modal from "./components/Modal";
 import DetailPage from "./DetailPage";
 
