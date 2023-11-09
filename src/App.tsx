@@ -46,9 +46,7 @@ function App() {
         {/* https://www.algolia.com/doc/api-reference/widgets/refinement-list/react */}
         <InstantSearch indexName="typefaces_dev" searchClient={searchClient}>
           <div className="two-columns">
-            <div>
-              <Refinements />
-            </div>
+            <Refinements />
             <div>
               <FontList
                 previewSize={previewSize}
