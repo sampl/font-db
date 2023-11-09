@@ -1,6 +1,12 @@
 import Tabs from "./components/Tabs";
+import useFont from "./hooks/useFont";
 
 function DetailPage({ fontFamily }: { fontFamily: string }) {
+  useFont({
+    fontFamily,
+    weights: [400, 500, 600],
+  });
+
   return (
     <>
       <h1>{fontFamily}</h1>
@@ -82,7 +88,7 @@ function DetailPage({ fontFamily }: { fontFamily: string }) {
             id: "samples",
             name: "Samples",
             content: (
-              <div style={{ fontSize: "3rem" }}>
+              <div style={{ fontSize: "3rem", fontFamily }}>
                 The quick brown fox jumps over the lazy dog.
               </div>
             ),
@@ -91,7 +97,7 @@ function DetailPage({ fontFamily }: { fontFamily: string }) {
             id: "glyphs",
             name: "Glyphs",
             content: (
-              <>
+              <div style={{ fontFamily }}>
                 <div className="glyph-samples">
                   <div>A</div>
                   <div>B</div>
@@ -231,7 +237,7 @@ function DetailPage({ fontFamily }: { fontFamily: string }) {
                   <div>⁸</div>
                   <div>⁹</div>
                 </div>
-              </>
+              </div>
             ),
           },
           {
