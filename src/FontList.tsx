@@ -5,6 +5,7 @@ import { previewTexts } from "./defaults/previewTexts";
 import type { Hit } from "../types/types";
 import Modal from "./components/Modal";
 import DetailPage from "./DetailPage";
+import useFont from "./hooks/useFont";
 
 const FontList = ({
   previewSize,
@@ -35,38 +36,69 @@ const FontList = ({
 
       <ol className="font-family-list">
         {/* @ts-ignore */}
-        {hits.map((hit: Hit) => {
-          const text =
-            previewText === "Name"
-              ? hit.name
-              : previewTextCustom ??
-                previewTexts.find((text) => text.name === previewText)?.text ??
-                "ABC123";
-
-          return (
-            <li
-              key={hit.objectID}
-              className="font-family-list-item"
-              onClick={() => setCurrentFont(hit)}
-            >
-              <input
-                className="font-family-list-item__preview"
-                style={{
-                  fontSize: previewSize,
-                }}
-                value={text}
-                onClick={(e) => e.stopPropagation()}
-                onChange={(e) => setPreviewTextCustom(e.target.value)}
-              />
-              <div className="font-family-list-item__family">{hit.name}</div>
-            </li>
-          );
-        })}
+        {hits.map((hit: Hit) => (
+          <FontListItem
+            key={hit.objectID}
+            hit={hit}
+            fontFamily={hit.name}
+            previewSize={previewSize}
+            previewText={previewText}
+            previewTextCustom={previewTextCustom}
+            setPreviewTextCustom={setPreviewTextCustom}
+            setCurrentFont={setCurrentFont}
+          />
+        ))}
       </ol>
       <button onClick={showMore} disabled={isLastPage}>
         Show more results
       </button>
     </div>
+  );
+};
+
+const FontListItem = ({
+  hit,
+  fontFamily,
+  previewSize,
+  previewText,
+  previewTextCustom,
+  setPreviewTextCustom,
+  setCurrentFont,
+}: {
+  hit: Hit;
+  fontFamily: string;
+  previewSize: number;
+  previewText?: string;
+  previewTextCustom?: string | null;
+  setPreviewTextCustom: (text: string | null) => void;
+  setCurrentFont: (font: Hit) => void;
+}) => {
+  const text =
+    previewText === "Name"
+      ? fontFamily
+      : previewTextCustom ??
+        previewTexts.find((text) => text.name === previewText)?.text ??
+        "ABC123";
+
+  useFont({
+    fontFamily,
+    weights: [400, 500, 600],
+  });
+
+  return (
+    <li className="font-family-list-item" onClick={() => setCurrentFont(hit)}>
+      <input
+        className="font-family-list-item__preview"
+        style={{
+          fontFamily,
+          fontSize: previewSize,
+        }}
+        value={text}
+        onClick={(e) => e.stopPropagation()}
+        onChange={(e) => setPreviewTextCustom(e.target.value)}
+      />
+      <div className="font-family-list-item__family">{fontFamily}</div>
+    </li>
   );
 };
 

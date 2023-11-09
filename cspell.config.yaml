@@ -7,5 +7,6 @@ words:
   - Firestore
   - instantsearch
   - upserts
+  - wght
 ignoreWords: []
 import: []
