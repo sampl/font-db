@@ -7,6 +7,8 @@ import Modal from "./components/Modal";
 import DetailPage from "./DetailPage";
 import useFont from "./hooks/useFont";
 
+const TEST_WITH_GOOGLE_FONTS = true;
+
 const FontList = ({
   previewSize,
   previewText,
@@ -81,6 +83,7 @@ const FontListItem = ({
         "ABC123";
 
   useFont({
+    service: TEST_WITH_GOOGLE_FONTS ? "google" : "adobe",
     fontFamily,
     weights: [400, 500, 600],
   });
@@ -90,7 +93,7 @@ const FontListItem = ({
       <input
         className="font-family-list-item__preview"
         style={{
-          fontFamily,
+          fontFamily: TEST_WITH_GOOGLE_FONTS ? fontFamily : `birra-2`,
           fontSize: previewSize,
         }}
         value={text}

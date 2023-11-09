@@ -3,6 +3,7 @@ import useFont from "./hooks/useFont";
 
 function DetailPage({ fontFamily }: { fontFamily: string }) {
   useFont({
+    service: "google",
     fontFamily,
     weights: [400, 500, 600],
   });
