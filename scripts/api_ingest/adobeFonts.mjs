@@ -1,6 +1,6 @@
 // This script queries the Adobe Fonts API for all available fonts and writes them to sqlite
 
-import { syncFontBatchToDatabase } from "./db.mjs";
+import { syncFontBatchToDatabase } from "../db.mjs";
 
 let startingPage = 1;
 const ALL_PAGES = false;
