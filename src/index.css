@@ -130,6 +130,11 @@ header {
   font-weight: bold;
   margin: 0;
 }
+.preview-styles {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
 main {
   flex: 1;
   padding: 1rem;

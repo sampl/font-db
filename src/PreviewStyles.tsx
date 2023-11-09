@@ -21,7 +21,7 @@ function PreviewStyles({
   setPreviewTextCustom: (value: string | null) => void;
 }) {
   return (
-    <>
+    <div className="preview-styles">
       <input
         type="range"
         onChange={(e) => setPreviewSize(parseInt(e.target.value))}
@@ -57,7 +57,7 @@ function PreviewStyles({
           </option>
         ))}
       </select>
-    </>
+    </div>
   );
 }
 
