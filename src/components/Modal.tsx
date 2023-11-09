@@ -10,7 +10,7 @@ export default function Modal({
   children: React.ReactNode;
 }) {
   return (
-    <RadixModal.Root open={isOpen} onClick={onClose}>
+    <RadixModal.Root open={isOpen} onOpenChange={onClose}>
       <RadixModal.Portal>
         <RadixModal.Overlay className="modal__overlay" onClick={onClose} />
         <RadixModal.Content className="modal__content">

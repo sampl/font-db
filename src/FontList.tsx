@@ -24,7 +24,7 @@ const FontList = ({
   return (
     <div>
       <Modal isOpen={Boolean(currentFont)} onClose={() => setCurrentFont(null)}>
-        <DetailPage fontFamily={currentFont?.name} />
+        {currentFont && <DetailPage fontFamily={currentFont.name} />}
       </Modal>
 
       {!isFirstPage && (

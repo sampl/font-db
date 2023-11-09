@@ -1,5 +1,5 @@
 import {
-  CurrentRefinements,
+  // CurrentRefinements,
   RefinementList,
   SearchBox,
 } from "react-instantsearch";
