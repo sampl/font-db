@@ -1,0 +1,11 @@
+version: "0.2"
+ignorePaths: []
+dictionaryDefinitions: []
+dictionaries: []
+words:
+  - algoliasearch
+  - Firestore
+  - instantsearch
+  - upserts
+ignoreWords: []
+import: []

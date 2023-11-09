@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "algoliasearch": "^4.20.0",
+    "dotenv": "^16.3.1",
+    "puppeteer": "^21.5.0",
+    "sqlite-async": "^1.2.0",
+    "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.10"
+  }
+}
