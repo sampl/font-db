@@ -88,6 +88,17 @@ const FontListItem = ({
     weights: [400, 500, 600],
   });
 
+  // Image previews for MyFonts
+  // const fontId = "334083bed54a36d52383a3c3a928f97a";
+  // const textRaw = "Test 123";
+  // const fontSize = 64;
+  // const foregroundColor = "000000";
+  // const backgroundColor = "ffffff";
+
+  // const text = encodeURIComponent(textRaw);
+  // const myFontsImageUrl = `https://sig.monotype.com/render/101/font/${fontId}?rt=${text}&rs=${fontSize}&fg=${foregroundColor}&bg=${backgroundColor}&w=1000&ft=&tp=0&t=cw`;
+  // console.log(myFontsImageUrl);
+
   return (
     <li className="font-family-list-item" onClick={() => setCurrentFont(hit)}>
       <input

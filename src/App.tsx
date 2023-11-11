@@ -24,41 +24,61 @@ function App() {
   }, [colorStyle]);
 
   return (
-    <>
-      <header>
-        <h1 className="logo">
-          <a href="/">FontDB</a>
-        </h1>
-        <div>
-          <PreviewStyles
-            previewText={previewText}
+    <InstantSearch indexName="typefaces_dev" searchClient={searchClient}>
+      {/* https://www.algolia.com/doc/api-reference/widgets/refinement-list/react */}
+      <div className="two-columns">
+        <div className="sidebar-wrapper">
+          <div>
+            <h1 className="logo">
+              <a href="/">FontDB</a>
+            </h1>
+
+            <Refinements />
+          </div>
+
+          <footer>
+            <a href="https://algolia.com/">Search by Algolia</a>
+            {" · "}
+            <a href="mailto:sam@directedworks.com">Feedback</a>
+            {" · "}
+            <a href="https://github.com/sampl/font-db" target="_blank">
+              Open source
+            </a>
+            {/*
+                {" · "}
+                <a href="https://github.com/sampl/font-db">Contribute</a>
+                */}
+            {" · "}
+            <a href="https://github.com/sampl/font-db/blob/main/license">
+              Legal
+            </a>
+          </footer>
+        </div>
+
+        <main>
+          <header>
+            <div></div>
+            <PreviewStyles
+              previewText={previewText}
+              previewSize={previewSize}
+              colorStyle={colorStyle}
+              setPreviewText={setPreviewText}
+              setPreviewSize={setPreviewSize}
+              setColorStyle={setColorStyle}
+              previewTextCustom={previewTextCustom}
+              setPreviewTextCustom={setPreviewTextCustom}
+            />
+          </header>
+
+          <FontList
             previewSize={previewSize}
-            colorStyle={colorStyle}
-            setPreviewText={setPreviewText}
-            setPreviewSize={setPreviewSize}
-            setColorStyle={setColorStyle}
+            previewText={previewText}
             previewTextCustom={previewTextCustom}
             setPreviewTextCustom={setPreviewTextCustom}
           />
-        </div>
-      </header>
-      <main>
-        {/* https://www.algolia.com/doc/api-reference/widgets/refinement-list/react */}
-        <InstantSearch indexName="typefaces_dev" searchClient={searchClient}>
-          <div className="two-columns">
-            <Refinements />
-            <div>
-              <FontList
-                previewSize={previewSize}
-                previewText={previewText}
-                previewTextCustom={previewTextCustom}
-                setPreviewTextCustom={setPreviewTextCustom}
-              />
-            </div>
-          </div>
-        </InstantSearch>
-      </main>
-    </>
+        </main>
+      </div>
+    </InstantSearch>
   );
 }
 
