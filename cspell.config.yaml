@@ -4,9 +4,18 @@ dictionaryDefinitions: []
 dictionaries: []
 words:
   - algoliasearch
+  - blackletter
+  - domcontentloaded
   - Firestore
+  - fontshare
+  - gjst
+  - grotesk
   - instantsearch
+  - typewolf
   - upserts
+  - wdth
+  - webfont
+  - webfonts
   - wght
 ignoreWords: []
 import: []

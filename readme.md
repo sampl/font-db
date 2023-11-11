@@ -4,21 +4,23 @@
 
 ## How it works
 
-Scripts update a sqlite db in the repo and sync it to Algolia.
+Basically we grab a bunch of font data, store it in SQLite, and upload it to Algolia for search.
+
+1. The [download scripts](/scripts/download/) gather data from font service APIs etc and puts it in separate SQL tables
+2. The [process scripts](/scripts/process/) use texts matching etc to combine data from individual sources into a single table
+3. An [upload script](/scripts/upload/) uploads the new table to the Algolia search index
 
 ## Development
 
+Use tsx to run typescript scripts: `npx tsx scripts/download/google.ts`
+
 Note: when setting up Algolia, make sure to add all attributes to Facets and Searchable Attributes under index configuration.
+TODO - do this automatically in the upload script
 
 ## TODO
 
-- [ ] Scripts to populate font db
-  - [ ] Adobe Fonts - https://typekit.com/api/v1/json/libraries/full and https://typekit.com/api/v1/json/families/<id>
-  - [ ] Google Fonts - https://developers.google.com/fonts/docs/developer_api
-  - [ ] MyFonts - https://dev.myfonts.com/docs/#overview
-  - [ ] Monotype? - https://fonts-api.monotype.com/apis
-- [ ] Show font previews with web font loader https://github.com/typekit/webfontloader
-- [ ] Firebase hosting
+- [ ] MyFonts - [https://dev.myfonts.com/docs/#overview]
+- [ ] Monotype? - [https://fonts-api.monotype.com/apis]
 - [ ] Get Algolia plan onto long-term free tier (docs discount?)
 
 Later: real accounts
@@ -26,4 +28,4 @@ Later: real accounts
 - [ ] Firebase auth
 - [ ] Users can save favorites and add to lists (Firestore?)
 - [ ] Integrated admin panel for responding to reported issues/submissions
-- Editors can use a UI to edit data (requires moving off SQLite to at least Firestore, maybe Postgres)
+- [ ] Editors can use a UI to edit data (requires moving off SQLite to at least Firestore, maybe Postgres)
