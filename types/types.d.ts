@@ -134,4 +134,4 @@ export type FontFamily = {
   // dateReleased?: string;
 };
 
-export type Hit = BaseHit & FontFamily;
+export type Hit = BaseHit & FontFamily & { objectID: string };

@@ -12,10 +12,8 @@ Basically we grab a bunch of font data, store it in SQLite, and upload it to Alg
 
 ## Development
 
-Use tsx to run typescript scripts: `npx tsx scripts/download/google.ts`
-
-Note: when setting up Algolia, make sure to add all attributes to Facets and Searchable Attributes under index configuration.
-TODO - do this automatically in the upload script
+- Get secret keys for an Algolia instance and Google Fonts API and add to `/scripts/.env` (see `/scripts/.env.example`)
+- Use typescript to run scripts: `npx tsx scripts/download/google.ts`
 
 ## TODO
 
@@ -32,6 +30,7 @@ Later: more sources
 
 Later: app styles
 
+- [ ] React router
 - [ ] Mobile styles
 - [ ] Smoother transitions
 
