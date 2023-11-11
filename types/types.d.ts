@@ -121,17 +121,17 @@ export type FontFamily = {
   freeToUse?: boolean;
 
   // hosted on
-  googleFontsId?: string;
+  googleFontsName?: string;
   adobeFontsSlug?: string;
   fontShareSlug?: string;
 
   // stats
-  popularity?: number;
-  trending?: number;
-  lastModified?: string;
-  dateAdded?: string;
-  dateModified?: string;
-  dateReleased?: string;
+  // popularity?: number;
+  // trending?: number;
+  // lastModified?: string;
+  // dateAdded?: string;
+  // dateModified?: string;
+  // dateReleased?: string;
 };
 
 export type Hit = BaseHit & FontFamily;

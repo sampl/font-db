@@ -19,13 +19,25 @@ TODO - do this automatically in the upload script
 
 ## TODO
 
-- [ ] MyFonts - [https://dev.myfonts.com/docs/#overview]
-- [ ] Monotype? - [https://fonts-api.monotype.com/apis]
-- [ ] Get Algolia plan onto long-term free tier (docs discount?)
+Next: basic search
+
+- [ ] More resolvers
+- [ ] Update index
+- [ ] Get Algolia plan onto long-term free tier [https://www.algolia.com/for-open-source/]
+
+Later: more sources
+
+- [ ] MyFonts? 200k+ [https://dev.myfonts.com/docs/#overview]
+- [ ] Spreadsheet override
+
+Later: app styles
+
+- [ ] Mobile styles
+- [ ] Smoother transitions
 
 Later: real accounts
 
-- [ ] Firebase auth
+- [ ] Firebase/Clerk/Supabase auth
 - [ ] Users can save favorites and add to lists (Firestore?)
 - [ ] Integrated admin panel for responding to reported issues/submissions
 - [ ] Editors can use a UI to edit data (requires moving off SQLite to at least Firestore, maybe Postgres)
