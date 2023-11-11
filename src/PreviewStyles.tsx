@@ -1,4 +1,5 @@
 import { colorStyles } from "./defaults/colorStyles";
+import { previewSizes } from "./defaults/previewSizes";
 import { previewTexts } from "./defaults/previewTexts";
 
 function PreviewStyles({
@@ -29,6 +30,17 @@ function PreviewStyles({
         max="500"
         value={previewSize}
       />
+      <select
+        value={previewSize}
+        onChange={(e) => setPreviewSize(parseInt(e.target.value))}
+      >
+        <option value="">--</option>
+        {previewSizes.map((size) => (
+          <option key={size} value={size}>
+            {size}
+          </option>
+        ))}
+      </select>
       <select
         disabled={previewTextCustom !== null}
         value={previewTextCustom ? "Custom" : previewText}
