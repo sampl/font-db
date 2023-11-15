@@ -9,10 +9,12 @@ import FontList from "./FontList";
 
 import { colorStyles } from "./defaults/colorStyles";
 import { previewTexts } from "./defaults/previewTexts";
+import Modal from "./components/Modal";
 
 function App() {
   const searchClient = algoliasearch(ALGOLIA_APP_ID, ALGOLIA_SEARCH_ONLY_KEY);
   const [colorStyle, setColorStyle] = useState(colorStyles[0]);
+  const [welcomeModal, setWelcomeModal] = useState(false);
   const [previewText, setPreviewText] = useState(previewTexts[0].name);
   const [previewTextCustom, setPreviewTextCustom] = useState<string | null>(
     null
@@ -25,6 +27,46 @@ function App() {
 
   return (
     <InstantSearch indexName="typefaces_dev" searchClient={searchClient}>
+      <Modal isOpen={welcomeModal} onClose={() => setWelcomeModal(false)}>
+        {/* <h3>Welcome to FontDB!</h3> */}
+        {/* <iframe
+          src="https://giphy.com/embed/G6sJqVpD1U4jC"
+          width="480"
+          height="232"
+          style={{
+            border: "none",
+          }}
+        /> */}
+        <p style={{ fontSize: "1rem" }}>
+          FontDB (as in “font database”) contains all available fonts from web
+          hosting services like Google Fonts and Adobe Fonts, including all
+          major historically significant faces. Use our powerful search, compare
+          fonts, or <a href="/features">see all features -&gt;</a>.
+        </p>
+        <p>
+          <a href="" target="_blank">
+            Get involved
+          </a>
+          {" · "}
+          <a href="" target="_blank">
+            Store
+          </a>
+          {" · "}
+          <a href="" target="_blank">
+            Donate
+          </a>
+          {" · "}
+          <a href="" target="_blank">
+            Source
+          </a>
+          {" · "}
+          <a href="" target="_blank">
+            Legal
+          </a>
+        </p>
+        <button onClick={() => setWelcomeModal(false)}>OK let's do it</button>
+      </Modal>
+
       {/* https://www.algolia.com/doc/api-reference/widgets/refinement-list/react */}
       <div className="two-columns">
         <div className="sidebar-wrapper">

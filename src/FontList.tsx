@@ -7,8 +7,6 @@ import Modal from "./components/Modal";
 import DetailPage from "./DetailPage";
 import useFont from "./hooks/useFont";
 
-const TEST_WITH_GOOGLE_FONTS = true;
-
 const FontList = ({
   previewSize,
   previewText,
@@ -26,7 +24,11 @@ const FontList = ({
 
   return (
     <div>
-      <Modal isOpen={Boolean(currentFont)} onClose={() => setCurrentFont(null)}>
+      <Modal
+        style="sideSheet"
+        isOpen={Boolean(currentFont)}
+        onClose={() => setCurrentFont(null)}
+      >
         {currentFont && <DetailPage fontFamily={currentFont.name} />}
       </Modal>
 
@@ -83,8 +85,20 @@ const FontListItem = ({
         "ABC123";
 
   useFont({
-    service: TEST_WITH_GOOGLE_FONTS ? "google" : "adobe",
-    fontFamily,
+    service: hit.googleFontsFamily
+      ? "google"
+      : hit.adobeFontsId
+      ? "adobe"
+      : hit.fontShareSlug
+      ? "fontshare"
+      : undefined,
+    fontFamily: hit.googleFontsFamily
+      ? hit.googleFontsFamily
+      : hit.adobeFontsId
+      ? hit.adobeFontsId
+      : hit.fontShareSlug
+      ? hit.fontShareSlug
+      : undefined,
     weights: [400, 500, 600],
   });
 
@@ -104,7 +118,7 @@ const FontListItem = ({
       <input
         className="font-family-list-item__preview"
         style={{
-          fontFamily: TEST_WITH_GOOGLE_FONTS ? fontFamily : `birra-2`,
+          fontFamily: fontFamily,
           fontSize: previewSize,
         }}
         value={text}
