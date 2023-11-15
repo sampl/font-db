@@ -13,8 +13,8 @@ export const updateRow = async (
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   db: any,
   table: string,
-  id: string,
   idField: string,
+  id: string,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   data: any
 ) => {

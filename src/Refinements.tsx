@@ -23,8 +23,61 @@ function Refinements() {
           list: "current-ref-list",
         }}
       /> */}
+      <h3>Superfamily</h3>
       <RefinementList
-        attribute="style"
+        attribute="superFamily"
+        operator="and"
+        classNames={{
+          list: "refinement-list",
+          item: "refinement-list-item",
+          label: "refinement-list-item__label",
+          labelText: "refinement-list-item__label-text",
+          count: "refinement-list-item__count",
+        }}
+      />
+
+      <h3>Contrast</h3>
+      <RefinementList
+        attribute="contrast"
+        operator="and"
+        classNames={{
+          list: "refinement-list",
+          item: "refinement-list-item",
+          label: "refinement-list-item__label",
+          labelText: "refinement-list-item__label-text",
+          count: "refinement-list-item__count",
+        }}
+      />
+
+      <h3>Foundry</h3>
+      <RefinementList
+        attribute="foundryName"
+        operator="and"
+        classNames={{
+          list: "refinement-list",
+          item: "refinement-list-item",
+          label: "refinement-list-item__label",
+          labelText: "refinement-list-item__label-text",
+          count: "refinement-list-item__count",
+        }}
+      />
+
+      <h3>Webfont hosted</h3>
+      <RefinementList
+        attribute="hosted"
+        operator="and"
+        classNames={{
+          list: "refinement-list",
+          item: "refinement-list-item",
+          label: "refinement-list-item__label",
+          labelText: "refinement-list-item__label-text",
+          count: "refinement-list-item__count",
+        }}
+      />
+
+      <h3>Free to use</h3>
+      <RefinementList
+        attribute="freeToUse"
         operator="and"
         classNames={{
           list: "refinement-list",

@@ -53,8 +53,14 @@ const syncAlgolia = async () => {
     console.log(`Setting search attributes`);
     // TODO - actual attributes
     await index.setSettings({
-      searchableAttributes: ["name", "style"],
-      attributesForFaceting: ["foundryName", "designersNames", "tags"],
+      searchableAttributes: ["name", "description", "foundryName"],
+      attributesForFaceting: [
+        "superFamily",
+        "foundryName",
+        "contrast",
+        "hosted",
+        "freeToUse",
+      ],
     });
 
     console.log(`✅ Finished uploading to Algolia`);

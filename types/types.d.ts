@@ -1,4 +1,5 @@
 import { BaseHit } from "instantsearch.js/es/types";
+import { superFamilies } from "../scripts/util/superFamilies";
 
 export type AdobeFontFamily = {
   id: string;
@@ -72,58 +73,60 @@ export type FontshareData = {
 
 // WIP
 export type FontFamily = {
+  // services
+  googleFontsFamily?: string;
+  adobeFontsSlug?: string;
+  adobeFontsId?: string;
+  fontShareSlug?: string;
+
   // ids
   id: string;
   name: string;
   slug: string;
-  adobeId?: string;
-  googleId?: string;
 
   // info
   description?: string;
   foundryName?: string;
-  designersNames?: string[];
+  // designersNames?: string[];
+
+  // can only be one of the strings in array superFamilies
+  superFamily?: (typeof superFamilies)[number];
 
   // attributes
   contrast?: "low" | "medium" | "high";
-  weights?: string[];
-  variations?: string[];
-  type?:
-    | "script"
-    | "handwritten"
-    | "serif"
-    | "sans-serif"
-    | "display"
-    | "monospace"
-    | "symbol";
-  tags?:
-    | "geometric"
-    | "rational"
-    | "humanist"
-    | "rounded"
-    | "blackletter"
-    | "rounded"
-    | "grotesk"
-    | "retro"
-    | "spooky"
-    | "holiday"
-    | "country"
-    | "";
-  license?: "open source" | "closed source";
-  family?: "clarendon" | "baskerville";
+  // weights?: string[];
+  // variations?: string[];
+  // type?:
+  //   | "script"
+  //   | "handwritten"
+  //   | "serif"
+  //   | "sans-serif"
+  //   | "display"
+  //   | "monospace"
+  //   | "symbol";
+  // tags?:
+  //   | "geometric"
+  //   | "rational"
+  //   | "humanist"
+  //   | "rounded"
+  //   | "blackletter"
+  //   | "rounded"
+  //   | "grotesk"
+  //   | "retro"
+  //   | "spooky"
+  //   | "holiday"
+  //   | "country"
+  //   | "";
+  // license?: "open source" | "closed source";
+  // family?: "clarendon" | "baskerville";
 
   // supports
-  languages?: string[];
-  scripts?: string[];
+  // languages?: string[];
+  // scripts?: string[];
 
   // usage
   hosted?: boolean;
   freeToUse?: boolean;
-
-  // hosted on
-  googleFontsName?: string;
-  adobeFontsSlug?: string;
-  fontShareSlug?: string;
 
   // stats
   // popularity?: number;

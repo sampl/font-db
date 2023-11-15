@@ -3,7 +3,7 @@ import { Database } from "sqlite-async";
 
 import { FONTSHARE as TABLE_NAME } from "../util/tableNames";
 import type { FontshareData } from "../../types/types";
-import { addRow, updateRow } from "../util/db";
+import { addRow } from "../util/db";
 
 const LAST_HREF = "/fonts/manrope";
 const DELAY_BETWEEN_SCROLLS = 3 * 1000;
@@ -241,7 +241,7 @@ const getPage = async (slug: string) => {
     return;
   } else {
     console.log(`  Syncing font family ${data.name} to database`);
-    await updateRow(db, TABLE_NAME, slug, "slug", {
+    await addRow(db, TABLE_NAME, {
       slug,
       data: JSON.stringify(data),
     });
